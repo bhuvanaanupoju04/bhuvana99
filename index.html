@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty Products</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fbd3e9, #bb377d);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+    }
+
+    h1 {
+      color: #bb377d;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .quote-section {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #bb377d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #a02e6f;
+    }
+
+    #quote {
+      margin-top: 1em;
+      font-style: italic;
+      color: #555;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 1em;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-title {
+      font-size: 1.2em;
+      margin: 0.5em 0 0.2em;
+      color: #bb377d;
+    }
+
+    .product-description {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Beauty & Care</h1>
+
+  <div class="quote-section">
+    <p>Beauty is everywhere — find it in yourself and around you.</p>
+    <button onclick="showQuote()">Inspire Me ✨</button>
+    <div id="quote"></div>
+  </div>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=Moisturizer" alt="Moisturizer">
+      <div class="product-title">HydraGlow Moisturizer</div>
+      <div class="product-description">Keeps your skin hydrated and radiant all day long.</div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=Lipstick" alt="Lipstick">
+      <div class="product-title">Velvet Matte Lipstick</div>
+      <div class="product-description">Smooth, long-lasting matte finish with bold colors.</div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=Serum" alt="Serum">
+      <div class="product-title">Vitamin C Serum</div>
+      <div class="product-description">Brightens skin and reduces dark spots naturally.</div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=Foundation" alt="Foundation">
+      <div class="product-title">SilkSkin Foundation</div>
+      <div class="product-description">Flawless coverage with a weightless feel.</div>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      "Beauty begins the moment you decide to be yourself. — Coco Chanel",
+      "Everything has beauty, but not everyone sees it. — Confucius",
+      "Let us live for the beauty of our own reality. — Charles Lamb",
+      "Beauty is power; a smile is its sword. — John Ray",
+      "There is beauty in simplicity."
+    ];
+
+    function showQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
